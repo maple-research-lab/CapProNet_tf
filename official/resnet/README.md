@@ -1,8 +1,7 @@
-# ResNet in TensorFlow
+# CapProNet with backbone of ResNet in TensorFlow
 
-Deep residual networks, or ResNets for short, provided the breakthrough idea of identity mappings in order to enable training of very deep convolutional neural networks. This folder contains an implementation of ResNet for the ImageNet dataset written in TensorFlow.
-
-See the following papers for more background:
+This is the offical implementation of paper [CapProNet: Deep Feature Learning via Orthogonal Projections onto Capsule Subspaces](https://arxiv.org/abs/1805.07621) with backbone of Resnet model. The backbone network has been borrowd from Tensorflow offical implementation of resnet [here](https://github.com/tensorflow/models/tree/master/official/resnet). 
+See the following papers for more detailes about the backbone architecture:
 
 [1] [Deep Residual Learning for Image Recognition](https://arxiv.org/pdf/1512.03385.pdf) by Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun, Dec 2015.
 
@@ -13,27 +12,11 @@ In code v1 refers to the resnet defined in [1], while v2 correspondingly refers 
 Please proceed according to which dataset you would like to train/evaluate on:
 
 
-## CIFAR-10
 
 ### Setup
 
 You simply need to have the latest version of TensorFlow installed.
 First make sure you've [added the models folder to your Python path](/official/#running-the-models); otherwise you may encounter an error like `ImportError: No module named official.resnet`.
-
-Then download and extract the CIFAR-10 data from Alex's website, specifying the location with the `--data_dir` flag. Run the following:
-
-```
-python cifar10_download_and_extract.py
-```
-
-Then to train the model, run the following:
-
-```
-python cifar10_main.py
-```
-
-Use `--data_dir` to specify the location of the CIFAR-10 data used in the previous step. There are more flag options as described in `cifar10_main.py`.
-
 
 ## ImageNet
 
@@ -43,7 +26,7 @@ To begin, you will need to download the ImageNet dataset and convert it to TFRec
 Once your dataset is ready, you can begin training the model as follows:
 
 ```
-python imagenet_main.py --data_dir=/path/to/imagenet
+python caps_imagenet_main.py --data_dir=/path/to/imagenet
 ```
 
 The model will begin training and will automatically evaluate itself on the validation data roughly once per epoch.
@@ -60,18 +43,3 @@ num_gpus:
 + 0:  Use OneDeviceStrategy and train on CPU.
 + 1:  Use OneDeviceStrategy and train on GPU.
 + 2+: Use MirroredStrategy (data parallelism) to distribute a batch between devices.
-
-### Pre-trained model
-You can download 190 MB pre-trained versions of ResNet-50. Reported accuracies are top-1 single-crop accuracy for the ImageNet validation set. Simply download and uncompress the file, and point the model to the extracted directory using the `--model_dir` flag.
-
-ResNet-50 v2 (Accuracy 76.05%):
-* [Checkpoint](http://download.tensorflow.org/models/official/20180601_resnet_v2_imagenet_checkpoint.tar.gz)
-* [SavedModel](http://download.tensorflow.org/models/official/20180601_resnet_v2_imagenet_savedmodel.tar.gz)
-
-ResNet-50 v2 (fp16, Accuracy 75.56%):
-* [Checkpoint](http://download.tensorflow.org/models/official/20180601_resnet_v2_fp16_imagenet_checkpoint.tar.gz)
-* [SavedModel](http://download.tensorflow.org/models/official/20180601_resnet_v2_fp16_imagenet_savedmodel.tar.gz)
-
-ResNet-50 v1 (Accuracy 75.91%):
-* [Checkpoint](http://download.tensorflow.org/models/official/20180601_resnet_v1_imagenet_checkpoint.tar.gz)
-* [SavedModel](http://download.tensorflow.org/models/official/20180601_resnet_v1_imagenet_savedmodel.tar.gz)
