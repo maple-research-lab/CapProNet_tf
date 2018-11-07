@@ -1,6 +1,6 @@
 # CapProNet with backbone of ResNet in TensorFlow
 
-This is the offical implementation of paper [CapProNet: Deep Feature Learning via Orthogonal Projections onto Capsule Subspaces](https://arxiv.org/abs/1805.07621) with backbone of Resnet model. The backbone network has been borrowd from Tensorflow offical implementation of resnet [here](https://github.com/tensorflow/models/tree/master/official/resnet). 
+This is the offical implementation of paper [CapProNet: Deep Feature Learning via Orthogonal Projections onto Capsule Subspaces](https://arxiv.org/abs/1805.07621) with backbone of Resnet model for ImageNet database. The backbone network has been borrowd from Tensorflow offical implementation of resnet [here](https://github.com/tensorflow/models/tree/master/official/resnet). 
 See the following papers for more detailes about the backbone architecture:
 
 [1] [Deep Residual Learning for Image Recognition](https://arxiv.org/pdf/1512.03385.pdf) by Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun, Dec 2015.
@@ -15,7 +15,7 @@ Please proceed according to which dataset you would like to train/evaluate on:
 
 ### Setup
 
-You simply need to have the latest version of TensorFlow installed.
+We used Tensorflow version 1.8 and Python 2.7 for our experiments
 First make sure you've [added the models folder to your Python path](/official/#running-the-models); otherwise you may encounter an error like `ImportError: No module named official.resnet`.
 
 ## ImageNet
