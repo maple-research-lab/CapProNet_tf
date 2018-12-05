@@ -15,7 +15,7 @@ Please proceed according to which dataset you would like to train/evaluate on:
 
 ### Setup
 
-We used Tensorflow version 1.8 and Python 2.7 for our experiments
+We used Tensorflow version 1.8 and Python 2.7 for our experiments. 
 First make sure you've [added the models folder to your Python path](/official/#running-the-models); otherwise you may encounter an error like `ImportError: No module named official.resnet`.
 
 ## ImageNet
