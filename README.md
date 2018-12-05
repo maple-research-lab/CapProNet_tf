@@ -1,4 +1,3 @@
-# CapProNet_tf
 # CapProNet with backbone of ResNet in TensorFlow
 
 This is the offical implementation of paper [CapProNet: Deep Feature Learning via Orthogonal Projections onto Capsule Subspaces](https://arxiv.org/abs/1805.07621) with backbone of Resnet model for ImageNet database. The backbone network has been borrowd from Tensorflow offical implementation of resnet [here](https://github.com/tensorflow/models/tree/master/official/resnet). 
