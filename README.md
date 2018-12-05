@@ -26,6 +26,7 @@ To begin, you will need to download the ImageNet dataset and convert it to TFRec
 Once your dataset is ready, you can begin training the model as follows:
 
 ```
+change your directory to ./official/resnet
 python caps_imagenet_main.py --data_dir=/path/to/imagenet
 ```
 
